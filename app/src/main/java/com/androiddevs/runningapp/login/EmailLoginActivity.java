@@ -98,14 +98,14 @@ public class EmailLoginActivity extends AppCompatActivity {
         if (password.isEmpty()) {
             mBinding.etLoginPassword.setError("Input password");
             mBinding.etLoginPassword.requestFocus();
-            return;
+            isError = true;
         }
 
         // error if password not meet requirements
         if (password.length() < 6) {
             mBinding.etLoginPassword.setError("Input password");
             mBinding.etLoginPassword.requestFocus();
-            return;
+            isError = true;
         }
 
         mAuth.signInWithEmailAndPassword(email, password)

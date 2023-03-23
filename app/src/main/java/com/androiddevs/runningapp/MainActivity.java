@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.urbanSess:
-                    navController.navigate(R.id.navigation_history);
+                        navController.navigate(R.id.navigation_history);
                         return true;
 
                     case R.id.urbanProfile:
