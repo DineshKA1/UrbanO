@@ -20,15 +20,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
+    <LinearLayout
+        android:id="@+id/mapViewContainer"
         android:layout_width="398dp"
         android:layout_height="377dp"
-        android:layout_marginStart="6dp"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="6dp"
         android:contentDescription="MapView"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
@@ -41,7 +41,7 @@
         android:contentDescription="Start Cycle"
         android:src="@drawable/cyclist"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+        app:layout_constraintTop_toBottomOf="@+id/mapViewContainer" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -52,6 +52,6 @@
         android:contentDescription="Start Run"
         android:src="@drawable/start_run"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+        app:layout_constraintTop_toBottomOf="@+id/mapViewContainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,6 +37,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap map;
     private CyclingSessionViewModel viewModel;
 
+    public static MapFragment newInstance() {
+        MapFragment f = new MapFragment();
+        return f;
+    }
+
     /**Initialises MapFragment. The CyclingSessionViewModel and FragmentMapBinding is instantiated here.
      * CyclingSessionViewModel is shared with CyclingSessionFragment.
      */

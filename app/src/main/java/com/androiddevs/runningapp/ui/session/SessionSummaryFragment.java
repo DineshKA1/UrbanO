@@ -76,12 +76,12 @@ public class SessionSummaryFragment extends Fragment {
         routeId = SessionSummaryFragmentArgs.fromBundle(getArguments()).getRouteId();
         totalDistanceFormatted = SessionSummaryFragmentArgs.fromBundle(getArguments()).getDistanceTravelled();
         totalTime = SessionSummaryFragmentArgs.fromBundle(getArguments()).getTimeElapsed();
-        mBinding.chronometer.setBase(SystemClock.elapsedRealtime() - totalTime);
-        mBinding.distanceDetailsFloat.setText(totalDistanceFormatted);
-        mBinding.avgSpeedFloat.setText(String.format("%.2f", 60000*Float.parseFloat(totalDistanceFormatted)/totalTime));
+        //mBinding.chronometer.setBase(SystemClock.elapsedRealtime() - totalTime);
+        //mBinding.distanceDetailsFloat.setText(totalDistanceFormatted);
+        //mBinding.avgSpeedFloat.setText(String.format("%.2f", 60000*Float.parseFloat(totalDistanceFormatted)/totalTime));
         Date date = Calendar.getInstance(TimeZone.getTimeZone("Asia/Singapore")).getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy - h:mm a", Locale.getDefault());
-        mBinding.dateTextView.setText(dateFormat.format(date));
+        //mBinding.dateTextView.setText(dateFormat.format(date));
     }
 
 
@@ -90,14 +90,16 @@ public class SessionSummaryFragment extends Fragment {
      *
      */
     private void bindRatingBar() {
-        mBinding.rateRouteRatingBar.setVisibility(View.VISIBLE);
-        mBinding.rateRouteTextView.setVisibility(View.VISIBLE);
+        //mBinding.rateRouteRatingBar.setVisibility(View.VISIBLE);
+        //mBinding.rateRouteTextView.setVisibility(View.VISIBLE);
+        /*
         mBinding.rateRouteRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 if (fromUser) rateRoute(rating);
             }
         });
+        */
     }
 
 

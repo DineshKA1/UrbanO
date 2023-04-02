@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import com.androiddevs.runningapp.control.LocationManager;
 import com.androiddevs.runningapp.login.StartActivity;
+import com.androiddevs.runningapp.map.MapFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -27,6 +29,8 @@ import com.androiddevs.runningapp.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Map;
 
 
 /**The main activity which contains the UI fragments and the navigation logic between fragments.
@@ -73,6 +77,16 @@ public class MainActivity extends AppCompatActivity {
         setUpActionBar();
         setUpBottomNavigationBar();
         locationManager.getLocationPermission();
+
+
+        LinearLayout fragContainer = (LinearLayout) findViewById(R.id.mapViewContainer);
+
+        LinearLayout ll = new LinearLayout(this);
+        ll.setId((int)12345);
+
+        getSupportFragmentManager().beginTransaction().add(ll.getId(), new MapFragment(), "mapTag1").commit();
+
+        fragContainer.addView(ll);
     }
 
     /**This method creates the UI for the top action bar.
